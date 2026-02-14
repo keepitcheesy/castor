@@ -1,0 +1,14 @@
+# Example RSS Feed URLs
+
+# News Sources
+https://news.ycombinator.com/rss
+https://www.reddit.com/r/technology/.rss
+https://www.reddit.com/r/programming/.rss
+
+# Tech Blogs
+https://blog.python.org/feeds/posts/default
+https://github.blog/feed/
+
+# Add your favorite RSS feeds here!
+# Format: One URL per line
+# Lines starting with # are comments
