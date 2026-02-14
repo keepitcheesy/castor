@@ -1,6 +1,5 @@
 """Tests for data models."""
 
-
 from castor.models import Anchor, AnchorStatus, Feed, Item, ItemStatus, Program, Script
 
 
