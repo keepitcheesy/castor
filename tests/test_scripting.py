@@ -101,5 +101,6 @@ def test_script_template_variables(db):
 
     # Check variables were replaced
     assert "Alice" in program.script
-    assert "1 items" in program.script or "1" in program.script
+    # The template uses {item_count} which should be replaced with "1"
+    assert " 1 " in program.script or "1 items" in program.script
     assert "Test Article" in program.script

@@ -236,9 +236,11 @@ class Database:
         """Get items by status."""
         cursor = self.conn.cursor()
         query = "SELECT * FROM items WHERE status = ? ORDER BY score DESC, published DESC"
+        params = [status.value]
         if limit:
-            query += f" LIMIT {limit}"
-        cursor.execute(query, (status.value,))
+            query += " LIMIT ?"
+            params.append(limit)
+        cursor.execute(query, params)
         return [self._row_to_item(row) for row in cursor.fetchall()]
 
     def update_item(self, item: Item):
@@ -387,8 +389,10 @@ class Database:
         cursor = self.conn.cursor()
         query = "SELECT * FROM programs ORDER BY generated_at DESC"
         if limit:
-            query += f" LIMIT {limit}"
-        cursor.execute(query)
+            query += " LIMIT ?"
+            cursor.execute(query, (limit,))
+        else:
+            cursor.execute(query)
         return [self._row_to_program(row) for row in cursor.fetchall()]
 
     def _row_to_program(self, row) -> Program:

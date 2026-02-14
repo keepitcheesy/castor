@@ -29,7 +29,7 @@ MANIFEST
 
 # PyInstaller
 *.manifest
-*.spec
+# Note: castor.spec is intentionally tracked for reproducible builds
 
 # Unit test / coverage reports
 htmlcov/
